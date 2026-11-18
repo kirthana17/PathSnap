@@ -29,21 +29,28 @@ python -m src.pathsnap.train --data data/raw --out results --artifacts artifacts
 
 The training script uses GroupKFold grouped by trip, fits five model families, and writes `results/model_comparison.csv` plus `artifacts/best_model.joblib`.
 
-## Start API and UI
+## Start API and UI on two laptops
 
-Terminal 1:
+Laptop 1 hosts the API. Make sure the project, saved model, dependencies, and data are present there. Activate the environment and start FastAPI:
 
-```bash
+```powershell
+.\.venv\Scripts\Activate.ps1
 uvicorn src.pathsnap.api:app --host 0.0.0.0 --port 8000
 ```
 
-Terminal 2:
+Keep the API terminal open. Check it on Laptop 1 at `http://127.0.0.1:8000/docs`. In another PowerShell terminal, run `ipconfig` and note the Wi-Fi adapter's IPv4 address.
 
-```bash
+On Laptop 2, activate its environment, install dependencies, and start Streamlit:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`. API docs: `http://localhost:8000/docs`. The UI retrieves the predicted-route Folium map from the API; evaluator reference routes are excluded from the browser map.
+Open `http://localhost:8501`. In the app's **API URL** field, enter `http://<LAPTOP-1-IP>:8000` (replace `<LAPTOP-1-IP>` with the IPv4 address from Laptop 1). Check connectivity at `http://<LAPTOP-1-IP>:8000/health`. The API serves predicted-route maps and keeps evaluator reference routes out of the browser.
+
+If port 8000 is already in use on Laptop 1, start the API with `--port 8001` and use `http://<LAPTOP-1-IP>:8001` in the API URL and health check instead. The backend also needs the dataset under `data/raw/`, including `student_test/`; otherwise `/trips` cannot list trips.
 
 ## Generate a Folium map
 
