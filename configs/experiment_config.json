@@ -1,0 +1,41 @@
+{
+  "random_seed": 42,
+  "candidate_k": 8,
+  "training_observation_step": 15,
+  "student_test_observation_step": 5,
+  "candidate_label_method": "nearest segment among supplied reference-route arc IDs (weak observation labels)",
+  "cross_validation": "5-fold GroupKFold grouped by trip_id",
+  "models": [
+    "Logistic Regression",
+    "KNN",
+    "Decision Tree",
+    "Random Forest",
+    "Extra Trees"
+  ],
+  "selected_model": "Random Forest",
+  "bayesian_optimisation": {
+    "method": "Optuna TPESampler",
+    "trials": 5,
+    "objective": "3-fold GroupKFold candidate-level Macro F1",
+    "search_space": {
+      "n_estimators": [
+        50,
+        120
+      ],
+      "max_depth": [
+        8,
+        20
+      ],
+      "min_samples_leaf": [
+        1,
+        8
+      ],
+      "max_features": [
+        "sqrt",
+        0.7,
+        1.0
+      ]
+    }
+  },
+  "evaluator_partition_used": false
+}

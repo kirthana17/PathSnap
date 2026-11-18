@@ -1,0 +1,13 @@
+Building training candidate table...
+Training Logistic Regression
+Training KNN
+Training Decision Tree
+Training Random Forest
+Training Extra Trees
+              model  cv_macro_f1_mean  cv_macro_f1_std  student_top1_accuracy  student_macro_f1  route_continuity  candidate_miss_rate  student_candidate_macro_f1  student_log_loss  cv_seconds  training_seconds  inference_seconds  candidate_rows
+Logistic Regression          0.796018         0.016145               0.687696          0.540711          0.333508             0.093848                    0.715146          0.367465    0.224101          0.060913           0.002237           35301
+                KNN          0.845978         0.021949               0.672576          0.529878          0.299268             0.093848                    0.823970          0.305236    1.389426          0.031850           1.095139           35301
+      Decision Tree          0.826221         0.020532               0.677789          0.525317          0.308939             0.093848                    0.784159          0.808892    0.970978          0.249026           0.003012           35301
+      Random Forest          0.872963         0.020193               0.710897          0.564887          0.316780             0.093848                    0.829737          0.197914    7.461572          1.943751           0.072543           35301
+        Extra Trees          0.831637         0.023147               0.698123          0.547405          0.315473             0.093848                    0.773627          0.305463    2.112902          0.514432           0.088118           35301
+Selected: Random Forest

@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+.pytest_cache/
+data/evaluator_test/
+
+# Raw GPS dataset - do not publish
+data/
+
+# Coordinate-bearing candidate datasets
+results/train_candidates.csv
+results/student_test_candidates.csv
+
+# Generated maps containing GPS coordinates
+maps/*.html
+maps/*.png
+
+# Technical report is Deliverable 2
+reports/
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Private GPS-derived EDA files
+results/eda/dataset_inventory.csv
+results/eda/*_trajectory.png
+
+# Private GPS-derived EDA files
+results/eda/dataset_inventory.csv
+results/eda/*_trajectory.png

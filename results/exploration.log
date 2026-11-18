@@ -1,0 +1,3 @@
+   partition  trips  gps_observations_median  gps_observations_min  gps_observations_max  nodes_median  arcs_median  route_arcs_median  missing_gps_cells  large_gaps_gt5s
+student_test     10                   1420.0                   262                  3958        6596.5      13145.0              250.0                  0               44
+       train     80                   1529.0                   361                 19313        9608.0      19526.5              280.0                  0             1216

@@ -1,0 +1,3 @@
+                     model  student_top1_accuracy  student_macro_f1  route_continuity  candidate_log_loss  inference_seconds  observations  cv_macro_f1
+     Untuned Random Forest               0.708029          0.567833          0.312859            0.201989           0.054583          3836     0.874628
+Optuna-tuned Random Forest               0.703858          0.559256          0.310507            0.214173           0.034753          3836     0.870647
