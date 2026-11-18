@@ -29,10 +29,8 @@ python -m src.pathsnap.train --data data/raw --out results --artifacts artifacts
 
 The training script uses GroupKFold grouped by trip, fits five model families, and writes `results/model_comparison.csv` plus `artifacts/best_model.joblib`.
 
-## Start API and UI on two laptops
 
-Laptop 1 hosts the API. Make sure the project, saved model, dependencies, and data are present there. Activate the environment and start FastAPI:
-
+Laptop 1 hosts the API. Make sure the project, saved model, dependencies, and data are present there. 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 uvicorn src.pathsnap.api:app --host 0.0.0.0 --port 8000
