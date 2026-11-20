@@ -58,7 +58,7 @@ python -m src.pathsnap.make_map --partition student_test --trip-id 00000007
 
 ## Current experiment snapshot
 
-The current executed comparison is in `results/model_comparison.csv`. Five models were trained; Random Forest was selected with CV candidate Macro F1 0.873 and student-test Top-1 accuracy 0.711. The HMM/Viterbi experiment increased measured route continuity from 0.317 to 0.788 while reducing pointwise Top-1 accuracy from 0.711 to 0.532. Optuna ran five TPE trials; the tuned model did not outperform the untuned model on the measured comparison. See the PDF draft for detailed metrics and caveats.
+The current executed comparison is in `results/model_comparison.csv`. Five models were trained; Random Forest was selected with CV candidate Macro F1 0.873 and student-test Top-1 accuracy 0.71. The HMM/Viterbi experiment increased measured route continuity from 0.317 to 0.788 while reducing pointwise Top-1 accuracy from 0.711 to 0.531. Optuna ran five TPE trials; the tuned model did not outperform the untuned model on the measured comparison. See the PDF draft for detailed metrics and caveats.
 
 ## Important methodology and integrity notes
 
